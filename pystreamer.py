@@ -165,9 +165,16 @@ def capture_stream_2(server):
 if __name__ == '__main__':
     try:
         if len(args.cameras) != 0:
-            loop = asyncio.get_event_loop()
-            tasks = asyncio.wait([capture_stream_1(args.cameras[0]), capture_stream_2(args.cameras[1])])
-            loop.run_until_complete(tasks)
+
+            if len(args.cameras) == 1:
+                loop = asyncio.get_event_loop()
+                tasks = asyncio.wait([capture_stream_1(args.cameras[0])])
+                loop.run_until_complete(tasks)
+
+            else:
+                loop = asyncio.get_event_loop()
+                tasks = asyncio.wait([capture_stream_1(args.cameras[0]), capture_stream_2(args.cameras[1])])
+                loop.run_until_complete(tasks)
 
         else:
             capture_stream_1(SERVER)
