@@ -3,15 +3,15 @@
 
 * 実行
 
-複数ストリーム取得
-```python
+複数ストリーム取得 ***２つまで***
+```bash
 
 $ python pystreamer.py --cameras rtsp://localhost:8554/live.sdp rtsp://localhost:8555/live.sdp
 
 ```
 
 単一ストリーム取得
-```python
+```bash
 
 $ python pystreamer.py --cameras rtsp://localhost:8554/live.sdp
 
