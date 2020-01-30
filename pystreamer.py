@@ -60,7 +60,7 @@ def capture_stream_1(server):
         while (cap.isOpened()):
             ret, frame = cap.read()
 
-            yield from asyncio.sleep(1)
+            yield from asyncio.sleep(0)
 
             logger.info('t1 {0} streaming...'.format(server))
 
@@ -76,7 +76,7 @@ def capture_stream_1(server):
                 file_name = 't1' + '_' + str(i) + '.png'
                 file_name = save_dir + file_name
 
-                time.sleep(1)
+                time.sleep(0)
                 cv2.imwrite(file_name, frame)
                 i += 1
 
@@ -111,7 +111,7 @@ def capture_stream_2(server):
 
         while (cap.isOpened()):
 
-            yield from asyncio.sleep(1)
+            yield from asyncio.sleep(0)
 
             ret, frame = cap.read()
 
@@ -129,7 +129,7 @@ def capture_stream_2(server):
                 file_name = 't2' + '_' + str(i) + '.png'
                 file_name = save_dir + file_name
 
-                time.sleep(1)
+                time.sleep(0)
                 cv2.imwrite(file_name, frame)
                 i += 1
 
